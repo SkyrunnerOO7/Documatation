@@ -84,3 +84,29 @@ class GFG
 	 
 	 }
 }
+===========================================================================================================================================================
+Q2 
+Link: https://practice.geeksforgeeks.org/problems/palindrome-string0817/1
+
+class Solution {
+    
+    int b = 1;
+    
+    void pal(String s, int i, int n)
+    {
+        if(i >= n/2){return;}
+        if(s.charAt(i) != s.charAt(n-i-1))
+        {
+            b = 0;
+            return;
+        }
+        
+        pal(s, i+1, n);
+    }
+    int isPalindrome(String S) {
+        // code here
+        
+        pal(S, 0, S.length()-1);
+        return b;
+    }
+};
